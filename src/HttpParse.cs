@@ -555,7 +555,7 @@ namespace BeetleX.FastHttpApi
                         }
                         string value = new string(bufferSpan.Slice(Offset, Count - Offset - 2));
                         header[Name] = value;
-                        if (Name[0] == 'C' && Name[5] == 'e' && Name[1] == 'o' && Name[2] == 'o' && Name[3] == 'k' && Name[4] == 'i')
+                        if (Name.Equals("cookie",StringComparison.OrdinalIgnoreCase))
                         {
                             HttpParse.AnalyzeCookie(value, cookie);
                         }
